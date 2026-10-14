@@ -1,0 +1,6 @@
+.tools/
+helper/build/
+tests/_work/
+build/
+dist/
+__pycache__/

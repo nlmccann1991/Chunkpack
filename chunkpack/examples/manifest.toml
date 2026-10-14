@@ -1,0 +1,35 @@
+# chunkpack manifest. Paths are relative to this file.
+
+[product]
+id = "1000000001"                 # stable ID; keys the registry entry and upgrade detection
+name = "My Open Source Game"
+version = "1.2.0"
+build = "120"                     # goes into the output name: setup_<slug>_(<build>).exe
+publisher = "My Studio"
+url = "https://example.org"
+exe = "bin/game.exe"              # main executable inside the source dir
+args = ""                         # launch arguments for shortcuts / "Launch" checkbox
+# icon = "assets/setup.ico"       # setup.exe icon
+# license = "LICENSE.txt"         # shown as a license page (GPL text, etc.)
+
+[source]
+dir = "game"                      # the folder that becomes the install dir
+exclude = ["*.pdb", "*.map"]      # fnmatch patterns on paths relative to dir
+
+[package]
+output_dir = "dist"
+# basename = "setup_my_game_(120)"
+# default_dir = "{autopf}\\My Open Source Game"   # default: {sd}\Games\<name>
+# per_user = false               # true: no admin prompt, installs for the current user
+# languages = ["english", "French", "German"]     # names of Inno's Languages\*.isl
+# slice_size = 4294967294        # bytes per .bin; GOG's value, the FAT32 maximum
+# chunk_size = 10485760          # Galaxy part size (10 MiB)
+# zlib_level = 6
+# wizard_image = "assets/wizard.bmp"
+# wizard_small_image = "assets/wizard_small.bmp"
+
+# Redistributables are packaged under {app}\__redist\ and run after the files are in place.
+# [[redist]]
+# file = "redist/VC_redist.x64.exe"
+# args = "/install /quiet /norestart"
+# description = "Microsoft Visual C++ 2015-2022 Redistributable"
